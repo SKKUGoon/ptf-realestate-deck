@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  melp-back:
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    ports:
+      - 10500:10500
+    env_file:
+      - ./server/.env  # For dev purpose
+    environment:
+      - EXEC_STATE=dev # For dev purpose
+
+  
