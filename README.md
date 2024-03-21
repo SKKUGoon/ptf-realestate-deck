@@ -1,38 +1,58 @@
-# create-svelte
+# Portfolio
+> Keywords: Realestate, Mapbox API, Deck GL, Data Science, Spatial Analysis, Svelte, Go, Python
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## data directory
 
-## Creating a project
+| Key | Value |
+|----------|----|
+| Langauage | Python |
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Direct access to the database. Update data as you please
 
 ```bash
-npm run dev
+# .env
+__USERNAME=example
+__PASSWORD=example
+__HOSTNAME=example
+__PORTNO=example
+__DBNAME=example
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+
+__TABLE_PNU=example.example
 ```
 
-## Building
+## server directory
 
-To create a production version of your app:
+| Key | Value |
+|----------|----|
+| Langauage | Go |
+
+Direct access to the database and acts as a bridge between Svelte based front end and the database. One might ask, you could have just built this with Node.js, but I wanted to hone my Golang skills.
+
+Major package includes `entgo` (orm) and `gin`. Successfully Dockerized.
 
 ```bash
-npm run build
+# Environment variables for development
+SERVER_HOST=example
+SERVER_PORT=example
+
+HOST=example
+PORT=example
+USERNAME=example
+PASSWORD=example
+DATABASE=example
+SCHEMA=example
 ```
 
-You can preview the production build with `npm run preview`.
+## src directory
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+| Key | Value |
+|----------|----|
+| Langauage | Svelte, Typescript |
+
+Main frontend. Display map, and can choose various data science projects on top of the layer.
+
+```bash
+# .env
+VITE_MAPBOX_TOKEN=...
+```
